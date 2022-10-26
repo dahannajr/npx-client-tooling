@@ -2,8 +2,13 @@
   "name": "@kickstep/npx-tools",
   "version": "1.0.0",
   "description": "",
+  "bin": "./bin/npx-cli.js",
   "scripts": {
     "help": "node tasks/help.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dahannajr/npx-client-tooling.git"
   },
   "keywords": [],
   "author": "",
