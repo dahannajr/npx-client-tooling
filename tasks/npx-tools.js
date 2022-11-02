@@ -67,20 +67,21 @@ fs.readdirSync(packagesDir).forEach(name => {
     const packageJson = path.join(name, 'package.json');
     // const packageJson = path.join(packagePathsByName[name], 'package.json');
     const json = JSON.parse(fs.readFileSync(packageJson, 'utf8'));
-    Object.keys(packagePathsByName).forEach(otherName => {
+    Object.keys(packagePathsByName).forEach(packageFolderName => {
+        otherName = `@kickstep\${otherName}`;
         if (json.dependencies && json.dependencies[otherName]) {
-            json.dependencies[otherName] = 'file:' + packagePathsByName[otherName];
+            json.dependencies[otherName] = 'file:' + packagePathsByName[packageFolderName];
         }
         if (json.devDependencies && json.devDependencies[otherName]) {
-            json.devDependencies[otherName] = 'file:' + packagePathsByName[otherName];
+            json.devDependencies[otherName] = 'file:' + packagePathsByName[packageFolderName];
         }
         if (json.peerDependencies && json.peerDependencies[otherName]) {
             json.peerDependencies[otherName] =
-                'file:' + packagePathsByName[otherName];
+                'file:' + packagePathsByName[packageFolderName];
         }
         if (json.optionalDependencies && json.optionalDependencies[otherName]) {
             json.optionalDependencies[otherName] =
-                'file:' + packagePathsByName[otherName];
+                'file:' + packagePathsByName[packageFolderName];
         }
     });
 
