@@ -4,7 +4,7 @@
   "description": "",
   "bin": "./bin/npx-cli.js",
   "scripts": {
-    "npx-tools": "git commit -am 'testing commit'; node tasks/npx-tools.js; ./bin/npm-cli.js",
+    "npx-tools": "git commit -am 'testing commit'; node tasks/npx-tools.js; bin/npm-cli.js",
     "postinstall": "node tasks/postinstall.js"
   },
   "repository": {
@@ -14,6 +14,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^9.4.1",

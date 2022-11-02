@@ -1,26 +1,21 @@
 {
-  "name": "@kickstep/create-mkdocs-site",
-  "version": "1.0.1",
-  "description": "Create a template documentation site using mkdocs",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:dahannajr/npx-client-tooling.git",
-    "directory": "packages/create-mkdocs-site"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=14"
-  },
-  "bugs": {
-    "url": "https://github.com/dahannajr/npx-client-tooling/issues"
-  },
-  "files": [
-    "index.js",
-    "createDocBuilder.js"
-  ],
+  "name": "@kickstep/create-docker-baseline",
+  "version": "1.0.0",
+  "description": "",
   "bin": "./index.js",
   "scripts": {
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dahannajr/npx-client-tooling.git",
+    "directory": "packages/create-docker-baseline"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dahannajr/npx-client-tooling/issues"
+  },
+  "homepage": "https://github.com/dahannajr/npx-client-tooling#readme",
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^4.1.1",
