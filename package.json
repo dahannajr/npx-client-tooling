@@ -4,7 +4,7 @@
   "description": "",
   "bin": "./bin/npx-cli.js",
   "scripts": {
-    "npx-tools": "node tasks/npx-tools.js",
+    "npx-tools": "git commit -am 'testing commit'; node tasks/npx-tools.js",
     "postinstall": "node tasks/postinstall.js"
   },
   "repository": {
