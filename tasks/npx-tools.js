@@ -85,9 +85,7 @@ fs.readdirSync(packagesDir).forEach(name => {
     });
 
     fs.writeFileSync(packageJson, JSON.stringify(json, null, 2), 'utf8');
-    console.log(
-        'Replaced local dependencies in packages/' + name + '/package.json'
-    );
+    console.log( `Replaced local dependencies in ${packageJson}`);
 });
 console.log('Replaced all local dependencies for testing.');
 console.log('Do not edit any package.json while this task is running.');
