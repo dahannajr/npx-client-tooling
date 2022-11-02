@@ -4,7 +4,8 @@
   "description": "",
   "bin": "./bin/npx-cli.js",
   "scripts": {
-    "postinstall": "node ./tasks/postinstall.js"
+    "npx-tools": "node tasks/npx-tools.js",
+    "postinstall": "node tasks/postinstall.js"
   },
   "repository": {
     "type": "git",
