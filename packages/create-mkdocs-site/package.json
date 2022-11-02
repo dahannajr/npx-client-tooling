@@ -1,11 +1,11 @@
 {
-  "name": "@kickstep/create-doc-builder",
+  "name": "@kickstep/create-mkdocs-site",
   "version": "1.0.0",
   "description": "Create a template documentation site using mkdocs",
   "repository": {
     "type": "git",
     "url": "git@github.com:dahannajr/npx-client-tooling.git",
-    "directory": "packages/create-doc-builder"
+    "directory": "packages/create-mkdocs-site"
   },
   "license": "MIT",
   "engines": {

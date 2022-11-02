@@ -93,22 +93,22 @@ console.log('Do not edit any package.json while this task is running.');
 // Finally, pack react-scripts.
 // Don't redirect stdio as we want to capture the output that will be returned
 // from execSync(). In this case it will be the .tgz filename.
-const scriptsFileName = cp
-    .execSync(`npm pack`, { cwd: path.join(packagesDir, 'react-scripts') })
-    .toString()
-    .trim();
-const scriptsPath = path.join(packagesDir, 'react-scripts', scriptsFileName);
-const args = process.argv.slice(2);
+// const scriptsFileName = cp
+//     .execSync(`npm pack`, { cwd: path.join(packagesDir, 'react-scripts') })
+//     .toString()
+//     .trim();
+// const scriptsPath = path.join(packagesDir, 'react-scripts', scriptsFileName);
+// const args = process.argv.slice(2);
 
-// Now run the CRA command
-const craScriptPath = path.join(packagesDir, 'create-react-app', 'index.js');
-cp.execSync(
-    `node ${craScriptPath} ${args.join(' ')} --scripts-version="${scriptsPath}"`,
-    {
-        cwd: rootDir,
-        stdio: 'inherit',
-    }
-);
+// // Now run the CRA command
+// const craScriptPath = path.join(packagesDir, 'create-react-app', 'index.js');
+// cp.execSync(
+//     `node ${craScriptPath} ${args.join(' ')} --scripts-version="${scriptsPath}"`,
+//     {
+//         cwd: rootDir,
+//         stdio: 'inherit',
+//     }
+// );
 
 // Cleanup
 handleExit();
