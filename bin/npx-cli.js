@@ -3,14 +3,16 @@
 'use strict';
 
 const fs = require('fs');
+const chalk = require('chalk');
 const path = require('path');
 const cp = require('child_process');
-
-const {execSync} = require('child_process');
+const commander = require('commander');
+const packageJson = require('../package.json');
+const program = new commander.Command(packageJson.name).version(packageJson.version);
 
 const runCommand = command => {
   try {
-    execSync(`${command}`, {stdio: 'inherit'});
+    cp(`${command}`, {stdio: 'inherit'});
   } catch (e) {
     console.error(`Failed to execute ${command}`, e);
     return false;
@@ -41,51 +43,26 @@ const handleError = e => {
   process.exit(1);
 };
 
+let toolCommand;
+function init() {
+  program
+    .addArgument(new commander.Argument('<tool-command>', 'kickstep starter tool to run').choices(['create-doc-builder', 'create-cloudformation-baseline', 'setup-docker-baseline']))
+    .usage(`${chalk.green('<tool-command>')} [options]`)
+    .action((tool, options, command) => {
+      toolCommand = tool;
+    });
+
+  program.parse();
+}
+
+
 process.on('SIGINT', handleExit);
 process.on('uncaughtException', handleError);
 
-console.log();
-console.log('-------------------------------------------------------');
-console.log('Assuming you have already run `npm install` to update the deps.');
-console.log('If not, remember to do this before testing!');
-console.log('-------------------------------------------------------');
-console.log();
+// Init
+init();
+console.log('Tool %s', toolCommand);
+console.log(`Additional Args: ${process.argv.slice(3)}`);
 
-const gitStatus = cp.execSync(`git status --porcelain`).toString();
-
-if (gitStatus.trim() !== '') {
-  console.log('Please commit your changes before running this script!');
-  console.log('Exiting because `git status` is not empty:');
-  console.log();
-  console.log(gitStatus);
-  console.log();
-  process.exit(1);
-}
-
-const rootDir = path.join(__dirname, '..');
-const packagesDir = path.join(rootDir, 'packages');
-const packagePathsByName = {};
-fs.readdirSync(packagesDir).forEach(name => {
-  const packageDir = path.join(packagesDir, name);
-  const packageJson = path.join(packageDir, 'package.json');
-  if (fs.existsSync(packageJson)) {
-    packagePathsByName[name] = packageDir;
-  }
-});
-
-const args = process.argv.slice(2);
-if (args.length < 2) {
-  console.error('Please enter at least 2 numbers');
-  process.exit(1); //an error occurred
-}
-
-console.log(`Result: `);
-const total = args.reduce((previous, current) => parseFloat(current) * parseFloat(previous));
-
-if (isNaN(total)) {
-  console.error('One or more arguments are not numbers');
-  process.exit(1); //an error occurred
-}
-
-console.log(total);
-process.exit(0); //no errors occurred
+// Cleanup
+handleExit();

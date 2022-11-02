@@ -4,7 +4,7 @@
   "description": "",
   "bin": "./bin/npx-cli.js",
   "scripts": {
-    "help": "node tasks/help.js"
+    "postinstall": "./tasks/postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -12,5 +12,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.4.1"
+  }
 }

@@ -1,10 +1,7 @@
 {
-  "name": "create-doc-builder",
+  "name": "@kickstep/create-doc-builder",
   "version": "1.0.0",
-  "keywords": [
-    "react"
-  ],
-  "description": "Create React apps with no build configuration.",
+  "description": "Create a template documentation site using mkdocs",
   "repository": {
     "type": "git",
     "url": "git@github.com:dahannajr/npx-client-tooling.git",
@@ -21,11 +18,10 @@
     "index.js",
     "createDocBuilder.js"
   ],
-  "bin": {
-    "create-react-app": "./index.js"
-  },
+  "bin": "./index.js",
   "scripts": {
-    "test": "cross-env FORCE_COLOR=true jest"
+    "build": "cd packages/react-scripts && node bin/react-scripts.js build",
+    "publish": "cross-env FORCE_COLOR=true jest"
   },
   "dependencies": {
     "chalk": "^4.1.2",
