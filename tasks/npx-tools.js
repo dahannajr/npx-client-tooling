@@ -64,7 +64,8 @@ fs.readdirSync(packagesDir).forEach(name => {
 });
 //Object.keys(packagePathsByName).forEach(name => {
 [__dirname].forEach(name => {
-    const packageJson = path.join(packagePathsByName[name], 'package.json');
+    const packageJson = path.join(name, 'package.json');
+    // const packageJson = path.join(packagePathsByName[name], 'package.json');
     const json = JSON.parse(fs.readFileSync(packageJson, 'utf8'));
     Object.keys(packagePathsByName).forEach(otherName => {
         if (json.dependencies && json.dependencies[otherName]) {
