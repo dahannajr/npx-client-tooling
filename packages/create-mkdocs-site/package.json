@@ -1,6 +1,6 @@
 {
   "name": "@kickstep/create-mkdocs-site",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Create a template documentation site using mkdocs",
   "repository": {
     "type": "git",
