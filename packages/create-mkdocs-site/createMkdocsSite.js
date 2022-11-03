@@ -5,6 +5,7 @@ const commander = require('commander');
 const envinfo = require('envinfo');
 
 const packageJson = require('./package.json');
+let projectName;
 
 function init() {
   const program = new commander.Command(packageJson.name)

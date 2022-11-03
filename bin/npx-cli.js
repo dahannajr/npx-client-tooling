@@ -46,8 +46,9 @@ const handleError = e => {
 let toolCommand;
 function init() {
   program
-    .addArgument(new commander.Argument('<tool-command>', 'kickstep starter tool to run').choices(['create-doc-builder', 'create-cloudformation-baseline', 'setup-docker-baseline']))
+    .addArgument(new commander.Argument('<tool-command>', 'kickstep starter tool to run').choices(['create-doc-builder', 'create-cloudformation-baseline', 'create-docker-baseline']))
     .usage(`${chalk.green('<tool-command>')} [options]`)
+    .allowUnknownOption()
     .action((tool, options, command) => {
       toolCommand = tool;
     });
@@ -55,14 +56,20 @@ function init() {
   program.parse();
 }
 
+function run() {
+  const { invoke } = require(`../packages/${toolCommand}`);
+
+  invoke(process.argv.slice(3));
+}
 
 process.on('SIGINT', handleExit);
 process.on('uncaughtException', handleError);
 
 // Init
 init();
-console.log('Tool %s', toolCommand);
-console.log(`Additional Args: ${process.argv.slice(3)}`);
+
+// Run
+run();
 
 // Cleanup
 handleExit();

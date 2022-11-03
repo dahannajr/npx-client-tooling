@@ -1,6 +1,6 @@
 {
   "name": "@kickstep/create-mkdocs-site",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Create a template documentation site using mkdocs",
   "repository": {
     "type": "git",
@@ -19,8 +19,7 @@
     "createDocBuilder.js"
   ],
   "bin": "./index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^4.1.1",

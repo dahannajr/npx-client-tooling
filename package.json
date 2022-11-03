@@ -19,7 +19,6 @@
   ],
   "dependencies": {
     "chalk": "^4.1.2",
-    "commander": "^9.4.1",
-    "@kickstep/create-mkdocs-site": "file:/Users/davidhanna/Development/kickstep-tools/npx-tools/packages/create-mkdocs-site"
+    "commander": "^9.4.1"
   }
 }
