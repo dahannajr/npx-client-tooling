@@ -66,7 +66,8 @@ function init() {
 }
 
 function invoke(args) {
-    console.log(args);
+  console.log(`createDockerBaseline.js invoke()`);
+  console.log(`args: ${JSON.stringify(args, "", 2)}`);
 }
 
 module.exports = {

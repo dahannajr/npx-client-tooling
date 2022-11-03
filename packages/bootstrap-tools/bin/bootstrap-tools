@@ -2,8 +2,26 @@
 
 'use strict';
 
-// eslint-disable-next-line no-unused-expressions
-let program = require('../lib/cli')();
-program.parse();
+const currentNodeVersion = process.versions.node;
+const semver = currentNodeVersion.split('.');
+const major = semver[0];
 
-console.log('got here');
+if (major < 14) {
+  console.error(
+    'You are running Node ' +
+      currentNodeVersion +
+      '.\n' +
+      '@kickstep/bootstrap-tools requires Node 14 or higher. \n' +
+      'Please update your version of Node.'
+  );
+  process.exit(1);
+}
+
+// eslint-disable-next-line no-unused-expressions
+let kbt = require('../lib/bootstrap-tools');
+
+console.log('./bin/bootstrap-tools');
+console.log(`${process.argv}`);
+
+let program = kbt.buildCommanderProgram();
+program.parse();    // Same as program.parse(process.argv);

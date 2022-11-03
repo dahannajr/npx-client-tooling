@@ -18,11 +18,11 @@
     "index.js",
     "createDocBuilder.js"
   ],
-  "bin": "./index.js",
+  "main": "./index.js",
   "scripts": {},
   "dependencies": {
     "chalk": "4.1.2",
-    "commander": "^4.1.1",
+    "commander": "^9.4.1",
     "cross-spawn": "^7.0.3",
     "envinfo": "^7.8.1",
     "fs-extra": "^10.0.0",
