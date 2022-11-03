@@ -1,6 +1,6 @@
 {
   "name": "@kickstep/bootstrap-tools",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.1-alpha.0",
   "description": "> TODO: description",
   "author": "David Hanna <david.hanna@kickstepinc.com>",
   "homepage": "https://github.com/dahannajr/npx-client-tooling#readme",
@@ -28,9 +28,9 @@
     "test": "node ./__tests__/@kickstep/bootstrap-tools.test.js"
   },
   "dependencies": {
-    "@kickstep/create-cloudformation-baseline": "^1.0.0-alpha.0",
-    "@kickstep/create-docker-baseline": "^1.0.0-alpha.0",
-    "@kickstep/create-mkdocs-site": "^1.0.0-alpha.0",
+    "@kickstep/create-cloudformation-baseline": "^1.0.1-alpha.0",
+    "@kickstep/create-docker-baseline": "^1.0.1-alpha.0",
+    "@kickstep/create-mkdocs-site": "^1.0.1-alpha.0",
     "chalk": "4.1.2",
     "commander": "^9.4.1",
     "yargs": "^17.6.1"
