@@ -65,7 +65,7 @@ function init() {
   }
 }
 
-function invoke(...args) {
+function invoke(args) {
     console.log(args);
 }
 

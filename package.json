@@ -1,12 +1,4 @@
 {
-  "name": "@kickstep/npx-tools",
-  "version": "1.0.7",
-  "description": "",
-  "bin": "./bin/npx-cli.js",
-  "scripts": {
-    "npx-tools": "git commit -am 'testing commit'; node tasks/npx-tools.js; bin/npm-cli.js",
-    "postinstall": "node tasks/postinstall.js"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:dahannajr/npx-client-tooling.git"
@@ -17,8 +9,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "commander": "^9.4.1"
+  "devDependencies": {
+    "lerna": "^6.0.1"
   }
 }

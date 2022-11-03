@@ -1,0 +1,41 @@
+{
+  "name": "@kickstep/bootstrap-tools",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "David Hanna <david.hanna@kickstepinc.com>",
+  "homepage": "https://github.com/dahannajr/npx-client-tooling#readme",
+  "license": "ISC",
+  "main": "lib/bootstrap-tools.js",
+  "bin": {
+    "@kickstep/bootstrap-tools": "bin/bootstrap-tools"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dahannajr/npx-client-tooling.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/@kickstep/bootstrap-tools.test.js"
+  },
+  "dependencies": {
+    "@kickstep/create-cloudformation-baseline": "*",
+    "@kickstep/create-docker-baseline": "*",
+    "@kickstep/create-mkdocs-site": "*",
+    "chalk": "4.1.2",
+    "commander": "^9.4.1",
+    "yargs": "^17.6.1"
+  },
+  "bugs": {
+    "url": "https://github.com/dahannajr/npx-client-tooling/issues"
+  }
+}
