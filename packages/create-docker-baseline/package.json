@@ -1,6 +1,6 @@
 {
   "name": "@kickstep/create-docker-baseline",
-  "version": "1.0.6",
+  "version": "1.0.0-alpha.0",
   "description": "",
   "bin": "./index.js",
   "main": "./createDockerBaseline.js",
